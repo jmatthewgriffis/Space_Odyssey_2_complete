@@ -27,7 +27,7 @@ void testApp::setup(){
         ofEnableAlphaBlending();
         ofBackground( 0 );
         //ofHideCursor(); // Doesn't work.
-        //CGDisplayHideCursor(NULL); // But this does.
+        CGDisplayHideCursor(NULL); // But this does.
         generation = 0;
         //cam.setDistance(0);
         metroid.setup();

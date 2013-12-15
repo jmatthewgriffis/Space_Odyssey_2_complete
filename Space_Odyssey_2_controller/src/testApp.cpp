@@ -5,6 +5,7 @@ void testApp::setup(){
     
     ofSetFrameRate( 60 );
     ofSetVerticalSync( true );
+    CGDisplayHideCursor(NULL);
     
     // Edit the IP address to match the recipient.
     mSender.setup( "169.254.136.111", 12345 );
@@ -35,9 +36,16 @@ void testApp::update(){
 //--------------------------------------------------------------
 void testApp::draw(){
     
-    ofSetColor(255);
-    ofDrawBitmapString("Look at the other screen!", ofGetWindowSize() / 2 );
-    ofDrawBitmapString("Player 3: use QWE  | Player 4: use IOP", ofGetWindowWidth() / 2, ofGetWindowHeight() / 2 + 100 );
+    ofPushMatrix();{
+        
+        ofTranslate( -150, -100 );
+        
+        ofSetColor(255);
+        ofDrawBitmapString("Look at the other screen!", ofGetWindowSize() / 2 );
+        ofDrawBitmapString("Player 3: use QWE.  | Player 4: use IOP.", ofGetWindowWidth() / 2, ofGetWindowHeight() / 2 + 100 );
+        ofDrawBitmapString("Press ESC to quit.", ofGetWindowWidth() / 2, ofGetWindowHeight() / 2 + 200 );
+        
+    }ofPopMatrix();
 }
 
 //--------------------------------------------------------------
