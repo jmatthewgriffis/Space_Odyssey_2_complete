@@ -1,8 +1,8 @@
 WHO DID WHAT?
 
 Matt:
--Created the galaxy (star/debris field) using recursion/fractals/branching
--Created the enemy appearance using recursion/fractals/branching
+<br>-Created the galaxy (star/debris field) using recursion/fractals/branching
+<br>-Created the enemy appearance using recursion/fractals/branching
 
 Mauricio:
 -Ported (most of the) original code from the Processing version
