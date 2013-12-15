@@ -5,8 +5,8 @@ Matt:
 <br>-Created the enemy appearance using recursion/fractals/branching
 
 Mauricio:
--Ported (most of the) original code from the Processing version
--Coded the enemy behavior
--Used fbo wizardry to convert enemy into frame-based animation to optimize performance (was previously drawn dynamically with processor-heavy fractals)
--Made the title screen graphic
--Made the ship graphics
+<br>-Ported (most of the) original code from the Processing version
+<br>-Coded the enemy behavior
+<br>-Used fbo wizardry to convert enemy into frame-based animation to optimize performance (was previously drawn dynamically with processor-heavy fractals)
+<br>-Made the title screen graphic
+<br>-Made the ship graphics
