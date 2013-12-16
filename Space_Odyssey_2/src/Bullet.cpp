@@ -19,7 +19,7 @@ Bullet::Bullet( ofVec2f _pos, float _ang ) {
     vel.x = sin( _ang ) * fVel;
     vel.y = cos( _ang ) * fVel;
     
-    pos = _pos + 30 * vel.normalized(); // The extra increment creates the bullet off the ship so it doesn't cause self-damage.
+    pos = _pos + 23 * vel.normalized(); // The extra increment creates the bullet off the ship so it doesn't cause self-damage.
 }
 
 void Bullet::update() {
