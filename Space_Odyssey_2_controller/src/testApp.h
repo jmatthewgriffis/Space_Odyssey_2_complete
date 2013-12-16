@@ -22,5 +22,11 @@ public:
     
     ofxOscSender mSender;
     
-    int key1, key2, key3, key4, key5, key6;
+    int key1, key2, key3, key4, key5, key6; // These function as booleans to indicate key status but they have to be ints so OSC can send them.
+    
+    vector< string > stringList; // Store the key input for IP address.
+    void addToString( string _input );
+    string ipAddress;
+    
+    int gameState;
 };
