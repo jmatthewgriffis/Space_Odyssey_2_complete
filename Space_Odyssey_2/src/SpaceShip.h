@@ -31,6 +31,7 @@ class SpaceShip {
     //float vel;
     ofColor colorPlayer;
     ofImage spaceImage;
+    ofImage propeller;
     
     //Universal Variables
     float spaceShipSize;

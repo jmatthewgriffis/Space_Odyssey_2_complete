@@ -20,6 +20,7 @@ void SpaceShip::setup( int _index, ofVec2f _pos, ofImage _spaceImage){
         //size = 150;
         inc = 20;
         //rotAngleInc = 1 * 0.15;
+        propeller.loadImage("propeller.png");
     }
     
     { // Matt
@@ -301,9 +302,19 @@ void SpaceShip::draw(){
                 } // End Matt
                 
                 // Draw the engine--Matt
-                ofSetRectMode( OF_RECTMODE_CENTER ); // Matt
-                ofSetColor( 255);
-                ofRect( sin(rotAngle) * engineSize * 2, cos( rotAngle) * engineSize * 2, engineSize, engineSize);
+                ofSetRectMode( OF_RECTMODE_CORNER );
+                // Matt
+                ofSetColor( 255); //This serves as clearing the color buffer
+                //Mauricio this is the final art for the propeller
+           
+                ofPushMatrix();{
+                    
+                    ofSetRectMode(OF_RECTMODE_CENTER);
+                    ofTranslate( sin( rotAngle + PI) * engineSize * 2, cos( rotAngle + PI) * engineSize * 2);
+                    ofRotate( ofRadToDeg(-rotAngle) );
+                    propeller.draw(0,0);
+                    
+                }ofPopMatrix();
                 
                 
             }ofPopMatrix();

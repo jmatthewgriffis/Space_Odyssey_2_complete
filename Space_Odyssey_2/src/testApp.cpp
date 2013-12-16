@@ -14,6 +14,7 @@ void testApp::setup(){
     { // Matt
         
         gameState = 0;
+        ofSetRectMode( OF_RECTMODE_CORNER );
         startScreen.loadImage("spaceships_start_screen.png");
         
         // This one listens to the same port that we were sending to in the other app.
