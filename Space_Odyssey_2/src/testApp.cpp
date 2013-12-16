@@ -36,8 +36,10 @@ void testApp::setup(){
             float offset = 100;
             for ( int i = 0; i < 4; i++ ) {
                 SpaceShip tmp;
+                string picNum =  ofToString(i);
                 // We pass in the value of i to set a permanent "control index," to which the specific controls are tied. That way if a ship gets destroyed and the vector indicies get changed, the controls stay the same. -Matt
-                tmp.setup( i, ofVec2f( offset, offset ), ofColor( ofColor( 20, 20, 200 ) ) );
+                spaceShip.loadImage("spaceship" + picNum + ".png");
+                tmp.setup( i, ofVec2f( offset, offset ), spaceShip);
                 shipList.push_back( tmp );
             }
             // Individual pos

@@ -30,7 +30,7 @@ void Enemy::setup() {
     for( int i = 0; i < 50; i++){
         
         string frameNum = ofToString(i);
-        metroid[i].loadImage(frameNum + ".png");
+        metroid[i].loadImage("metroid/" + frameNum + ".png");
     }
     
     pos = ofVec2f( ofGetWindowWidth() / 2.0 - metroid[ 0 ].getWidth() / 2.0, 0 ); //Matt

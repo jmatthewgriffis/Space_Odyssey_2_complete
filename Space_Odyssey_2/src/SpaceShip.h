@@ -21,7 +21,7 @@ class SpaceShip {
     // Mauricio
     
 //    SpaceShip(ofVec2f _pos, ofVec2f _vel, ofColor _colorPlayer/*, ofImage _spaceImage*/);
-    void setup(int _index /* Matt--I added this int. */, ofVec2f _pos, ofColor _colorPlayer/*, ofImage _spaceImage*/);
+    void setup(int _index /* Matt--I added this int. */, ofVec2f _pos, ofImage _spaceImage);
     void draw();
     void update();
     

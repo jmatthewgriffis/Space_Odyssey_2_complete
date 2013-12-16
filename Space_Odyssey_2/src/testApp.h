@@ -77,6 +77,6 @@ public:
     void checkOsc();
     ofxOscReceiver mReceiver;
     int gameState;
-    ofImage startScreen;
+    ofImage startScreen, spaceShip;
     
 };
