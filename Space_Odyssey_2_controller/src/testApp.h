@@ -30,5 +30,5 @@ public:
     
     int gameState;
     
-    ofTrueTypeFont font, fontSmall, fontSmallest;
+    ofTrueTypeFont font, fontMedium, fontSmall, fontSmallest;
 };
