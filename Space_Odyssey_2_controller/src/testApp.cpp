@@ -5,7 +5,7 @@ void testApp::setup(){
     
     ofSetFrameRate( 60 );
     ofSetVerticalSync( true );
-    //CGDisplayHideCursor(NULL);
+    CGDisplayHideCursor(NULL);
     ofBackground( 0 );
     
     gameState = 0;
