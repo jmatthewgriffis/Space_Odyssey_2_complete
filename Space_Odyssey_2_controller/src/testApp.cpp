@@ -13,6 +13,10 @@ void testApp::setup(){
     key1 = key2 = key3 = key4 = key5 = key6 = 0;
     
     ipAddress = "";
+    
+    font.loadFont( "blocked.ttf", 72 );
+    fontSmall.loadFont( "blocked.ttf", 36 );
+    fontSmallest.loadFont( "blocked.ttf", 18 );
 }
 
 //--------------------------------------------------------------
@@ -55,7 +59,16 @@ void testApp::draw(){
     
     if ( gameState == 0 ) { // Draw the first screen.
         ofSetColor(255);
-        ofDrawBitmapString( ipAddress, 300, 300 );
+        font.drawString( "Space Odyssey 2", ofGetWindowWidth() / 2 - 650, ofGetWindowHeight() / 2 - 150 );
+        fontSmall.drawString( "Secondary controller setup", ofGetWindowWidth() / 2 - 300, ofGetWindowHeight() / 2 - 50 );
+        fontSmallest.drawString( "   Players 3 and 4 can play using this computer's keyboard.\n\nYou will need the IP address of the computer running the game.", ofGetWindowWidth() / 2 - 550, ofGetWindowHeight() / 2 + 50 );
+        float xPos = ofGetWindowWidth() / 2 - 500;
+        float yPos = ofGetWindowHeight() / 2 + 200;
+        ofSetColor( 0, 200, 0 );
+        fontSmall.drawString( "Enter IP address: ", xPos, yPos );
+        ofSetColor( 255 );
+        fontSmall.drawString( ipAddress, xPos + 610, yPos );
+        
         return;
     }
     
@@ -66,9 +79,9 @@ void testApp::draw(){
         ofTranslate( -150, -100 );
         
         ofSetColor(255);
-        ofDrawBitmapString("Look at the other screen!", ofGetWindowSize() / 2 );
-        ofDrawBitmapString("Player 3: use QWE.  | Player 4: use IOP.", ofGetWindowWidth() / 2, ofGetWindowHeight() / 2 + 100 );
-        ofDrawBitmapString("Press ESC to quit.", ofGetWindowWidth() / 2, ofGetWindowHeight() / 2 + 200 );
+        font.drawString("Look at the other screen!", ofGetWindowWidth() / 2, ofGetWindowHeight() / 2 );
+        font.drawString("Player 3: use QWE.  | Player 4: use IOP.", ofGetWindowWidth() / 2, ofGetWindowHeight() / 2 + 100 );
+        font.drawString("Press ESC to quit. Press B to run setup again.", ofGetWindowWidth() / 2, ofGetWindowHeight() / 2 + 200 );
         
     }ofPopMatrix();
 }
@@ -77,6 +90,15 @@ void testApp::draw(){
 void testApp::keyPressed(int key){
     
     switch( key ) {
+            
+            // Restart
+        case 'b':
+        case 'B':
+            if ( gameState == 1 ) {
+                stringList.clear();
+                setup();
+            }
+            break;
             
         { // Input IP address.
             
@@ -127,6 +149,7 @@ void testApp::keyPressed(int key){
             if ( gameState == 0 ) {
                 //mSender.setup( ipAddress, 99999 );
                 mSender.setup( "localhost", 99999 );
+                gameState = 1;
             }
             break;
             
