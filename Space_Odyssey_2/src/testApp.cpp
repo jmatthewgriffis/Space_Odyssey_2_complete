@@ -17,7 +17,7 @@ void testApp::setup(){
         startScreen.loadImage("spaceships_start_screen.png");
         
         // This one listens to the same port that we were sending to in the other app.
-        mReceiver.setup( 12345 );
+        mReceiver.setup( 99999 );
         
         killFrameRate = false; // Turn on the enemy and background, watch the framerate drop.
         // Maintenance

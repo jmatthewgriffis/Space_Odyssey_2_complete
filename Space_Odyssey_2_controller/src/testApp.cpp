@@ -8,8 +8,8 @@ void testApp::setup(){
     CGDisplayHideCursor(NULL);
     
     // Edit the IP address to match the recipient.
-    mSender.setup( "169.254.136.111", 12345 );
-    //mSender.setup( "localhost", 12345 );
+    //mSender.setup( "169.254.136.111", 99999 );
+    mSender.setup( "localhost", 99999 );
     
     ofBackground( 0 );
     
