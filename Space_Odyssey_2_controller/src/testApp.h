@@ -29,4 +29,6 @@ public:
     string ipAddress;
     
     int gameState;
+    
+    ofTrueTypeFont font, fontMedium, fontSmall, fontSmallest;
 };
