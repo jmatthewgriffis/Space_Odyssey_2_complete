@@ -5,19 +5,36 @@ void testApp::setup(){
     
     ofSetFrameRate( 60 );
     ofSetVerticalSync( true );
-    CGDisplayHideCursor(NULL);
-    
-    // Edit the IP address to match the recipient.
-    //mSender.setup( "169.254.136.111", 99999 );
-    mSender.setup( "localhost", 99999 );
-    
+    //CGDisplayHideCursor(NULL);
     ofBackground( 0 );
     
-    key1 = key2 = key3 = key4 = key5 = key6 = 0;;
+    gameState = 0;
+    
+    key1 = key2 = key3 = key4 = key5 = key6 = 0;
+    
+    ipAddress = "";
+}
+
+//--------------------------------------------------------------
+void testApp::addToString( string _input ) {
+    
+    stringList.push_back( _input );
 }
 
 //--------------------------------------------------------------
 void testApp::update(){
+    
+    if ( gameState == 0 ) { // Setup the IP address on the first screen.
+        
+        ipAddress = ""; // Clear the string.
+        
+        for ( int i = 0; i < stringList.size(); i++ ) {
+            ipAddress += stringList[ i ]; // Concatenate all the strings in the vector.
+        }
+        return;
+    }
+    
+    // Now we're on the game screen (gameState = 1 ).
     
     ofxOscMessage m;
     
@@ -36,6 +53,14 @@ void testApp::update(){
 //--------------------------------------------------------------
 void testApp::draw(){
     
+    if ( gameState == 0 ) { // Draw the first screen.
+        ofSetColor(255);
+        ofDrawBitmapString( ipAddress, 300, 300 );
+        return;
+    }
+    
+    // Now we're on the game screen (gameState = 1).
+    
     ofPushMatrix();{
         
         ofTranslate( -150, -100 );
@@ -53,7 +78,61 @@ void testApp::keyPressed(int key){
     
     switch( key ) {
             
-            // Player controls
+        { // Input IP address.
+            
+            // Add to the string.
+        case '0':
+            if ( gameState == 0 ) addToString( "0" );
+            break;
+        case '1':
+            if ( gameState == 0 ) addToString( "1" );
+            break;
+        case '2':
+            if ( gameState == 0 ) addToString( "2" );
+            break;
+        case '3':
+            if ( gameState == 0 ) addToString( "3" );
+            break;
+        case '4':
+            if ( gameState == 0 ) addToString( "4" );
+            break;
+        case '5':
+            if ( gameState == 0 ) addToString( "5" );
+            break;
+        case '6':
+            if ( gameState == 0 ) addToString( "6" );
+            break;
+        case '7':
+            if ( gameState == 0 ) addToString( "7" );
+            break;
+        case '8':
+            if ( gameState == 0 ) addToString( "8" );
+            break;
+        case '9':
+            if ( gameState == 0 ) addToString( "9" );
+            break;
+        case '.':
+            if ( gameState == 0 ) addToString( "." );
+            break;
+            // Subtract from the string.
+        case OF_KEY_BACKSPACE:
+            if ( gameState == 0 ) {
+                if ( stringList.size() != 0 ) {
+                    stringList.erase( stringList.end() );
+                }
+            }
+            break;
+            // Submit choice and setup the receiver.
+        case ' ':
+            if ( gameState == 0 ) {
+                //mSender.setup( ipAddress, 99999 );
+                mSender.setup( "localhost", 99999 );
+            }
+            break;
+            
+        } // End input IP address.
+            
+        { // Player controls.
             
             // Player Three
         case 'q':
@@ -86,6 +165,8 @@ void testApp::keyPressed(int key){
         case 'P':
             key6 = 1;
             break;
+            
+        } // End player controls.
     }
 }
 
@@ -94,7 +175,7 @@ void testApp::keyReleased(int key){
     
     switch( key ) {
             
-            // Player controls
+        { // Player controls.
             
             // Player Three
         case 'q':
@@ -127,6 +208,8 @@ void testApp::keyReleased(int key){
         case 'P':
             key6 = 0;
             break;
+            
+        } // End player controls.
     }
 }
 
