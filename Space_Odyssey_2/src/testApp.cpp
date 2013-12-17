@@ -55,6 +55,20 @@ void testApp::setup(){
     }
     
     
+    //-----------------Michael Kane's-----------------//
+    //Michael was an important part of the previous sequel so we decided to call the second michael's kahane defection, this part of the code is actually his
+    for( int i = 0; i < 50; i++){
+    
+        Michael tmp;
+        float vx = ofRandom(-4,4);
+        float vy = ofRandom(-4,4);
+        tmp.setParams(metroid.pos, vx, vy);
+        kahane.push_back(tmp);
+        
+    }
+    
+        
+        
     
 }
 
@@ -135,6 +149,19 @@ void testApp::update(){
     // Note from Matt: Following up the boolean function we created above, this oF function sorts the vector according to the values of the booleans and then removes any with a 'true' value:
     ofRemove( bulletList, bShouldIErase );
     ofRemove( shipList, bShouldIErase2 );
+    
+    if (metroid.bDestroyMe){
+        
+        
+        deque<Michael>::iterator it;
+        for( it = kahane.begin(); it != kahane.end(); it++){
+            
+            it->resetForces();
+            it->addDampingForce();
+            it->update();
+        }
+    
+    }
 }
 
 //--------------------------------------------------------------
@@ -182,6 +209,18 @@ void testApp::draw(){
         
         //cam.end();
     }
+    
+    if( metroid.bDestroyMe){
+        
+        deque<Michael>::iterator it;
+        for( it = kahane.begin(); it != kahane.end(); it++){
+            
+            it->draw();
+        }
+            
+        
+        }
+    
 }
 
 //--------------------------------------------------------------

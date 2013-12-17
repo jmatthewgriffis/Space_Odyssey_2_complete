@@ -23,6 +23,7 @@
 #include "Bullet.h"
 #include "WarBackground.h"
 #include "ofxOsc.h"
+#include "Michael.h"
 
 
 
@@ -78,5 +79,7 @@ public:
     ofxOscReceiver mReceiver;
     int gameState;
     ofImage startScreen, spaceShip;
+    
+    deque < Michael > kahane;
     
 };

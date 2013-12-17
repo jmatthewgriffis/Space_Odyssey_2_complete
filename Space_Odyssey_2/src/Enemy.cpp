@@ -18,7 +18,7 @@ void Enemy::setup() {
     generation = 0;
     vel.set( ofRandom(-1, 1), ofRandom(-1, 1));
     attack = true;
-    healthMax = 1000;
+    healthMax = 500;
     health = healthMax;
     bDestroyMe = false;
     
@@ -114,6 +114,8 @@ void Enemy::update(vector <SpaceShip> _tmp){
         vel.set( ofRandom(-1, 1), ofRandom(-1, 1));
     }
     
+    //Mauricio
+
 }
 
 void Enemy::draw(int &_frameNum){
@@ -149,6 +151,8 @@ void Enemy::draw(int &_frameNum){
         metroid[_frameNum].draw(0,0);
         
     }ofPopMatrix();
+    
+  
 }
 
 void Enemy::branch( float length, float _ang1, float _ang2, float _mult, bool _trans ) {

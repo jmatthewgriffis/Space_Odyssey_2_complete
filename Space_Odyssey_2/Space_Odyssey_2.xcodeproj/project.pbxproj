@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6763661518403CCA008A5BE0 /* SpaceShip.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6763661318403CCA008A5BE0 /* SpaceShip.cpp */; };
 		6764F73B1856A506004F1639 /* WarBackground.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6764F7391856A506004F1639 /* WarBackground.cpp */; };
+		67A36AC6185FCB5900657E30 /* Michael.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67A36AC4185FCB5900657E30 /* Michael.cpp */; };
 		BBAB23CB13894F3D00AA2426 /* GLUT.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
 		CD087AFE184E309400FB3B5E /* Bullet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CD087AFC184E309400FB3B5E /* Bullet.cpp */; };
 		CD7846DB184C330400D7E1A1 /* Enemy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CD7846D9184C330400D7E1A1 /* Enemy.cpp */; };
@@ -82,6 +83,8 @@
 		6763661418403CCA008A5BE0 /* SpaceShip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpaceShip.h; sourceTree = "<group>"; };
 		6764F7391856A506004F1639 /* WarBackground.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = WarBackground.cpp; sourceTree = "<group>"; };
 		6764F73A1856A506004F1639 /* WarBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WarBackground.h; sourceTree = "<group>"; };
+		67A36AC4185FCB5900657E30 /* Michael.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Michael.cpp; sourceTree = "<group>"; };
+		67A36AC5185FCB5900657E30 /* Michael.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Michael.h; sourceTree = "<group>"; };
 		BBAB23BE13894E4700AA2426 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = ../../../libs/glut/lib/osx/GLUT.framework; sourceTree = "<group>"; };
 		CD087AFC184E309400FB3B5E /* Bullet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bullet.cpp; sourceTree = "<group>"; };
 		CD087AFD184E309400FB3B5E /* Bullet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bullet.h; sourceTree = "<group>"; };
@@ -362,6 +365,8 @@
 				CD087AFD184E309400FB3B5E /* Bullet.h */,
 				6764F7391856A506004F1639 /* WarBackground.cpp */,
 				6764F73A1856A506004F1639 /* WarBackground.h */,
+				67A36AC4185FCB5900657E30 /* Michael.cpp */,
+				67A36AC5185FCB5900657E30 /* Michael.h */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -471,6 +476,7 @@
 				CDDCD1E0185BA4360021AFAF /* NetworkingUtils.cpp in Sources */,
 				E4B69E210A3A1BDC003C02F2 /* testApp.cpp in Sources */,
 				CDDCD1E5185BA4360021AFAF /* OscPrintReceivedElements.cpp in Sources */,
+				67A36AC6185FCB5900657E30 /* Michael.cpp in Sources */,
 				CDDCD1E1185BA4360021AFAF /* UdpSocket.cpp in Sources */,
 				CDDCD1E2185BA4360021AFAF /* NetworkingUtilsWin.cpp in Sources */,
 				CDDCD1E4185BA4360021AFAF /* OscOutboundPacketStream.cpp in Sources */,
