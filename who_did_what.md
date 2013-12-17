@@ -23,4 +23,4 @@ Mauricio:
 <br>-Implemented all the graphics and graphics behavior for the assets. Making sure they would load cohesively with the controlelrs manipulation
 <br>-Implemented steering for elements in the second background - Still in development, not currently drawn in the app.
 
-**Note for Charlie: If you notice that hasn't been addressed on this document regarding our work, pls add it or email us in order to address it.
+##Note for Charlie: If you notice that hasn't been addressed on this document regarding our work, pls add it or email us in order to address it.
