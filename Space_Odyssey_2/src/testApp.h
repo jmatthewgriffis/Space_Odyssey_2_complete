@@ -79,6 +79,8 @@ public:
     ofxOscReceiver mReceiver;
     int gameState;
     ofImage startScreen, spaceShip;
+    ofTrueTypeFont font, fontSmall;
+    int startScreenFade, startScreenFadeVel;
     
     deque < Michael > kahane;
     

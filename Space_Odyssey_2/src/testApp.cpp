@@ -13,9 +13,14 @@ void testApp::setup(){
     
     { // Matt
         
+        //ofSetDataPathRoot("data/"); // Comment this in to compile a standalone build.
         gameState = 0;
+        font.loadFont("blocked.ttf", 24);
+        fontSmall.loadFont("blocked.ttf", 12);
         ofSetRectMode( OF_RECTMODE_CORNER );
         startScreen.loadImage("spaceships_start_screen.png");
+        startScreenFade = 0;
+        startScreenFadeVel = 3;
         
         // This one listens to the same port that we were sending to in the other app.
         mReceiver.setup( 99999 );
@@ -91,7 +96,13 @@ bool bShouldIErase2( SpaceShip &a ){
 //--------------------------------------------------------------
 void testApp::update(){
     
-    if ( gameState == 0 ) return;
+    if ( gameState == 0 ) {
+        startScreenFade += startScreenFadeVel;
+        if ( startScreenFade < 0 || startScreenFade > 255 ) {
+            startScreenFadeVel *= -1;
+        }
+        return;
+    }
     
     checkOsc(); //Matt
     
@@ -170,6 +181,10 @@ void testApp::draw(){
     if ( gameState == 0 ) {
         //ofSetRectMode(OF_RECTMODE_CENTER);
         startScreen.draw( 0, 0, ofGetWindowWidth(), ofGetWindowHeight());
+        ofSetColor(255, startScreenFade);
+        font.drawString("Press [SPACE] to begin.", 210, ofGetHeight() - 100);
+        ofSetColor(255);
+        fontSmall.drawString("(c) 2013-2014 M2 Studios", 210, ofGetHeight()-25);
         return;
     }
     
@@ -640,6 +655,7 @@ void testApp::collideSpaceshipsAndSpaceships() {
 void testApp::collideEnemyAndBullets() {
     
     { // Matt
+        if ( metroid.health <= 0 ) return;
         for ( int i = 0; i < bulletList.size(); i++ ) {
             float dist = bulletList[ i ].pos.distance( ofVec2f( metroid.pos.x + 400, metroid.pos.y + 250 ) );
             if ( dist < 350 ) {
@@ -654,6 +670,7 @@ void testApp::collideEnemyAndBullets() {
 void testApp::collideSpaceshipsAndEnemy() {
     
     { // Matt
+        if ( metroid.health <= 0 ) return;
         for ( int i = 0; i < shipList.size(); i++ ) {
             float dist = shipList[ i ].pos.distance( ofVec2f( metroid.pos.x + 400, metroid.pos.y + 250 ) );
             if ( dist < 350 ) {
