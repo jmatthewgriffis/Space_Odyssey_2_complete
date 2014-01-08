@@ -3,6 +3,8 @@
 //--------------------------------------------------------------
 void testApp::setup(){
     
+    //ofSetDataPathRoot("data/"); // Comment this in to compile a standalone build.
+    
     ofSetFrameRate( 60 );
     ofSetVerticalSync( true );
     CGDisplayHideCursor(NULL);
